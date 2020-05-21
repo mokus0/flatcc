@@ -69,6 +69,15 @@
 
 #undef PDIAGNOSTIC_IGNORE_UNUSED
 
+#if defined(PDIAGNOSTIC_IGNORE_SIGN_CONVERSION)
+#if PDIAGNOSTIC_AWARE_CLANG
+#pragma clang diagnostic ignored "-Wsign-conversion"
+#elif PDIAGNOSTIC_AWARE_GCC
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
+#endif
+#undef PDIAGNOSTIC_IGNORE_SIGN_CONVERSION
+
 #if defined (__cplusplus) && __cplusplus < 201103L
 #if PDIAGNOSTIC_AWARE_CLANG
 /* Needed for < C++11 clang C++ static_assert */
