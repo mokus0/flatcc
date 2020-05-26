@@ -18,7 +18,7 @@ flatbuffers_voffset_t offset = 0;\
     id__tmp = ID;\
     vt__tmp = (flatbuffers_voffset_t *)((uint8_t *)(t) -\
         __flatbuffers_soffset_read_from_pe(t));\
-    if (__flatbuffers_voffset_read_from_pe(vt__tmp) >= sizeof(vt__tmp[0]) * (id__tmp + 3)) {\
+    if (__flatbuffers_voffset_read_from_pe(vt__tmp) >= sizeof(vt__tmp[0]) * (id__tmp + 3u)) {\
         offset = __flatbuffers_voffset_read_from_pe(vt__tmp + id__tmp + 2);\
     }\
 }
